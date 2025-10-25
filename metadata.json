@@ -1,0 +1,5 @@
+{
+  "name": "KeepOrNuke",
+  "description": "An intelligent file cleaning application that uses AI to analyze and sort files from an uploaded folder. Users provide a cleaning instruction, and the AI decides which files to keep or delete. The kept files can be downloaded as a single ZIP archive.",
+  "requestFramePermissions": []
+}
