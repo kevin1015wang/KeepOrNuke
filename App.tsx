@@ -84,21 +84,21 @@ const App: React.FC = () => {
   };
   
   return (
-    <div className="min-h-screen bg-dark-bg flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen bg-light-bg flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
       <main className="w-full max-w-4xl mx-auto">
         <header className="text-center mb-8">
             <div className="inline-flex items-center justify-center gap-3">
                 <SparklesIcon className="w-10 h-10 text-brand-primary" />
-                <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-dark-text-primary">
+                <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-light-text-primary">
                 KeepOrNuke
                 </h1>
             </div>
-          <p className="mt-4 text-lg text-dark-text-secondary">
+          <p className="mt-4 text-lg text-light-text-secondary">
             Upload a folder, tell the AI what to do, and download your cleaned directory.
           </p>
         </header>
         
-        <div className="bg-dark-card border border-dark-border rounded-xl p-6 sm:p-8 shadow-2xl">
+        <div className="bg-light-card border border-light-border rounded-xl p-6 sm:p-8 shadow-2xl">
             {files.length === 0 ? (
                 <FileUploader onFolderSelect={handleFolderSelect} disabled={isProcessing} />
             ) : (

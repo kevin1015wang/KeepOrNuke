@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { SparklesIcon, DownloadIcon, SpinnerIcon } from './Icons';
 
@@ -24,13 +23,13 @@ const Controls: React.FC<ControlsProps> = ({
   return (
     <div className="w-full mt-8 space-y-4">
       <div>
-        <label htmlFor="prompt" className="block text-sm font-medium text-dark-text-secondary mb-2">
+        <label htmlFor="prompt" className="block text-sm font-medium text-light-text-secondary mb-2">
           AI Cleaning Instruction
         </label>
         <textarea
           id="prompt"
           rows={3}
-          className="block w-full rounded-md border-0 bg-dark-card text-dark-text-primary shadow-sm ring-1 ring-inset ring-dark-border placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-primary sm:text-sm sm:leading-6 p-3 transition"
+          className="block w-full rounded-md border-0 bg-light-card text-light-text-primary shadow-sm ring-1 ring-inset ring-light-border placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-brand-primary sm:text-sm sm:leading-6 p-3 transition"
           placeholder="e.g., 'Delete all log files and keep only images that are smaller than 1MB'"
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}

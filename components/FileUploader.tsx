@@ -1,4 +1,3 @@
-
 import React, { useRef } from 'react';
 import { UploadIcon } from './Icons';
 
@@ -25,11 +24,11 @@ const FileUploader: React.FC<FileUploaderProps> = ({ onFolderSelect, disabled })
       <button
         onClick={handleClick}
         disabled={disabled}
-        className="w-full flex flex-col items-center justify-center p-8 border-2 border-dashed rounded-lg cursor-pointer bg-dark-card border-dark-border hover:bg-gray-800 hover:border-brand-secondary transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-50"
+        className="w-full flex flex-col items-center justify-center p-8 border-2 border-dashed rounded-lg cursor-pointer bg-light-card border-light-border hover:bg-gray-50 hover:border-brand-secondary transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-50"
       >
         <UploadIcon className="w-12 h-12 text-gray-400 mb-4" />
-        <span className="text-lg font-semibold text-dark-text-primary">Click to upload a folder</span>
-        <p className="text-sm text-dark-text-secondary mt-1">Select a folder to start cleaning</p>
+        <span className="text-lg font-semibold text-light-text-primary">Click to upload a folder</span>
+        <p className="text-sm text-light-text-secondary mt-1">Select a folder to start cleaning</p>
         <input
           type="file"
           ref={inputRef}

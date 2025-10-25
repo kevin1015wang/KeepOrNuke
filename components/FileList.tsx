@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { AnalyzedFile } from '../types';
 import { FileItem } from './FileItem';
@@ -14,7 +13,7 @@ const FileList: React.FC<FileListProps> = ({ files }) => {
 
   return (
     <div className="w-full mt-8">
-      <h2 className="text-xl font-semibold mb-4 text-dark-text-primary">Files to Process ({files.length})</h2>
+      <h2 className="text-xl font-semibold mb-4 text-light-text-primary">Files to Process ({files.length})</h2>
       <ul className="space-y-3 max-h-[50vh] overflow-y-auto pr-2">
         {files.map(analyzedFile => (
           <FileItem key={analyzedFile.id} analyzedFile={analyzedFile} />

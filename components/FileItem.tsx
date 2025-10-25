@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { AnalyzedFile, FileStatus } from '../types';
 import { FileIcon, CheckCircleIcon, XCircleIcon, ExclamationCircleIcon, SpinnerIcon } from './Icons';
@@ -18,11 +17,11 @@ const formatBytes = (bytes: number, decimals = 2): string => {
 
 const StatusBadge: React.FC<{ status: FileStatus }> = ({ status }) => {
   const statusConfig = {
-    [FileStatus.Pending]: { text: 'Pending', color: 'bg-gray-500', icon: null },
-    [FileStatus.Analyzing]: { text: 'Analyzing...', color: 'bg-status-analyzing', icon: <SpinnerIcon className="w-4 h-4" /> },
-    [FileStatus.Keep]: { text: 'Keep', color: 'bg-status-keep', icon: <CheckCircleIcon className="w-4 h-4" /> },
-    [FileStatus.Delete]: { text: 'Delete', color: 'bg-status-delete', icon: <XCircleIcon className="w-4 h-4" /> },
-    [FileStatus.Error]: { text: 'Error', color: 'bg-status-error', icon: <ExclamationCircleIcon className="w-4 h-4" /> },
+    [FileStatus.Pending]: { text: 'Pending', color: 'bg-gray-400 text-white', icon: null },
+    [FileStatus.Analyzing]: { text: 'Analyzing...', color: 'bg-status-analyzing text-white', icon: <SpinnerIcon className="w-4 h-4" /> },
+    [FileStatus.Keep]: { text: 'Keep', color: 'bg-status-keep text-white', icon: <CheckCircleIcon className="w-4 h-4" /> },
+    [FileStatus.Delete]: { text: 'Delete', color: 'bg-status-delete text-white', icon: <XCircleIcon className="w-4 h-4" /> },
+    [FileStatus.Error]: { text: 'Error', color: 'bg-status-error text-white', icon: <ExclamationCircleIcon className="w-4 h-4" /> },
   };
 
   const { text, color, icon } = statusConfig[status];
@@ -39,20 +38,20 @@ export const FileItem: React.FC<FileItemProps> = ({ analyzedFile }) => {
   const { file, status, reason } = analyzedFile;
 
   return (
-    <li className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-dark-card rounded-lg border border-dark-border space-y-3 sm:space-y-0">
+    <li className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-light-card rounded-lg border border-light-border space-y-3 sm:space-y-0">
       <div className="flex items-center gap-4 w-full sm:w-auto">
         <FileIcon className="w-8 h-8 text-brand-primary flex-shrink-0" />
         <div className="flex-grow min-w-0">
-          <p className="text-sm font-medium text-dark-text-primary truncate" title={(file as any).webkitRelativePath || file.name}>
+          <p className="text-sm font-medium text-light-text-primary truncate" title={(file as any).webkitRelativePath || file.name}>
             {(file as any).webkitRelativePath || file.name}
           </p>
-          <p className="text-xs text-dark-text-secondary">{formatBytes(file.size)}</p>
+          <p className="text-xs text-light-text-secondary">{formatBytes(file.size)}</p>
         </div>
       </div>
       <div className="flex flex-col sm:items-end w-full sm:w-auto sm:ml-4">
         <StatusBadge status={status} />
         {reason && (
-          <p className="text-xs text-dark-text-secondary mt-1 text-left sm:text-right max-w-xs truncate" title={reason}>
+          <p className="text-xs text-light-text-secondary mt-1 text-left sm:text-right max-w-xs truncate" title={reason}>
             {reason}
           </p>
         )}
